@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "6afdf260-83fd-4212-9ba7-49a0042c3ca6",
+		"name": "testrail",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_projects",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{EMAIL}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{PASSWORD}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{HOST}} /index.php?/api/v2/get_projects",
+					"protocol": "https",
+					"host": [
+						"{{HOST}} "
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/api/v2/get_projects",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get test plans",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASSWORD}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{EMAIL}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{HOST}} /index.php?/api/v2/get_plans/1",
+					"protocol": "https",
+					"host": [
+						"{{HOST}} "
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/api/v2/get_plans/1",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Run - Custom tests",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASSWORD}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{EMAIL}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"suite_id\": 1,\r\n\t\"name\": \"Api testrun 1\",\r\n\t\"include_all\": true,\r\n\t\"case_ids\": []\r\n}"
+				},
+				"url": {
+					"raw": "https://{{HOST}} /index.php?/api/v2/add_run/1",
+					"protocol": "https",
+					"host": [
+						"{{HOST}} "
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/api/v2/add_run/1",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add result to a test",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASSWORD}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{EMAIL}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"status_id\": 5,\r\n\t\"comment\": \"This test failed\",\r\n\t\"elapsed\": \"15s\",\r\n\t\"defects\": \"TR-7\",\r\n\t\"version\": \"1.0 RC1 build 3724\",\r\n\r\n\t\"custom_step_results\": [\r\n\t\t{\r\n\t\t\t\"content\": \"Step 1\",\r\n\t\t\t\"expected\": \"Expected Result 1\",\r\n\t\t\t\"actual\": \"Actual Result 1\",\r\n\t\t\t\"status_id\": 1\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"content\": \"Step 2\",\r\n\t\t\t\"expected\": \"Expected Result 2\",\r\n\t\t\t\"actual\": \"Actual Result 2\",\r\n\t\t\t\"status_id\": 2\r\n\t\t}\r\n\r\n\t]\r\n\r\n}"
+				},
+				"url": {
+					"raw": "https://{{HOST}}/index.php?/api/v2/add_result_for_case/7/1",
+					"protocol": "https",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/api/v2/add_result_for_case/7/1",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_run_details",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{PASSWORD}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{EMAIL}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{HOST}}/index.php?/api/v2/get_runs/1",
+					"protocol": "https",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "/api/v2/get_runs/1",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
