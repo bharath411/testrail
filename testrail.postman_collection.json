@@ -36,10 +36,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://{{HOST}} /index.php?/api/v2/get_projects",
+					"raw": "https://{{HOST}}/index.php?/api/v2/get_projects",
 					"protocol": "https",
 					"host": [
-						"{{HOST}} "
+						"{{HOST}}"
 					],
 					"path": [
 						"index.php"
@@ -85,10 +85,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://{{HOST}} /index.php?/api/v2/get_plans/1",
+					"raw": "https://{{HOST}}/index.php?/api/v2/get_plans/1",
 					"protocol": "https",
 					"host": [
-						"{{HOST}} "
+						"{{HOST}}"
 					],
 					"path": [
 						"index.php"
@@ -135,10 +135,10 @@
 					"raw": "{\r\n\t\"suite_id\": 1,\r\n\t\"name\": \"Api testrun 1\",\r\n\t\"include_all\": true,\r\n\t\"case_ids\": []\r\n}"
 				},
 				"url": {
-					"raw": "https://{{HOST}} /index.php?/api/v2/add_run/1",
+					"raw": "https://{{HOST}}/index.php?/api/v2/add_run/1",
 					"protocol": "https",
 					"host": [
-						"{{HOST}} "
+						"{{HOST}}"
 					],
 					"path": [
 						"index.php"
